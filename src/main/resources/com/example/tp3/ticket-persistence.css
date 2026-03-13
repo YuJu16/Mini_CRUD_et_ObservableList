@@ -1,0 +1,76 @@
+/* ticket-persistence.css */
+
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: linear-gradient(to bottom, #f9fbfd, #eef3f9);
+}
+
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1d3557;
+    -fx-padding: 0 0 10 0;
+}
+
+.label {
+    -fx-text-fill: #243447;
+}
+
+.text-field,
+.combo-box,
+.date-picker,
+.text-area {
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #c8d6e5;
+    -fx-padding: 8px;
+}
+
+.button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-padding: 6 8 6 8;
+    -fx-cursor: hand;
+    -fx-font-size: 11px;
+}
+
+.button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.status-label {
+    -fx-background-color: #e8f1fb;
+    -fx-text-fill: #1d3557;
+    -fx-padding: 10px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #bfd3ea;
+    -fx-border-radius: 8px;
+}
+
+.table-view {
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #d8e2ef;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #dbeafe;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-size: 36px;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #bfd3ea;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #bfdbfe;
+    -fx-text-fill: #0f172a;
+}
+
+.check-box {
+    -fx-text-fill: #243447;
+}

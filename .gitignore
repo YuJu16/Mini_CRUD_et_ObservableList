@@ -1,0 +1,26 @@
+# Fichiers compilés Java
+target/
+*.class
+
+# Fichier de base de données SQLite (généré à l'exécution)
+*.db
+tickets.db
+
+# Exports générés
+exports/
+
+# Fichiers IDE
+.idea/
+*.iml
+.vscode/
+*.project
+*.classpath
+.settings/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# ---- caché au prof ----
+tp.md
+notes_perso/
