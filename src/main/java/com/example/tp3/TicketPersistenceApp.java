@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -102,11 +103,10 @@ public class TicketPersistenceApp extends Application {
         statusLabel.setMaxWidth(Double.MAX_VALUE);
 
         // ---- Colonne gauche ----
-        VBox leftPane = new VBox(10, pageTitle, form, btnBar, searchBar, statusLabel);
-        leftPane.setPadding(new Insets(14));
-        // Agrandissement significatif pour laisser la place aux 6 boutons
-        leftPane.setPrefWidth(520);
-        leftPane.setMinWidth(520);
+        VBox leftPane = new VBox(12, pageTitle, form, btnBar, searchBar, statusLabel); // Moins d'espace pour que le bas soit visible
+        leftPane.setPadding(new Insets(15)); // Marge intérieure légèrement diminuée
+        leftPane.setPrefWidth(550);
+        leftPane.setMinWidth(550);
 
         // ---- Table ----
         buildTable();
@@ -115,16 +115,25 @@ public class TicketPersistenceApp extends Application {
         VBox.setVgrow(table, Priority.ALWAYS);
 
         // ---- Layout racine ----
-        HBox root = new HBox(leftPane, rightPane);
-        HBox.setHgrow(rightPane, Priority.ALWAYS);
+        BorderPane borderPane = new BorderPane();
+        borderPane.setLeft(leftPane);
+        borderPane.setCenter(rightPane);
+        
+        // Appliquer la couleur de fond principale (Pink 50) pour correspondre au nouveau thème rose girly
+        borderPane.setStyle("-fx-background-color: #fdf2f8;");
 
-        // ---- Scène ----
-        Scene scene = new Scene(root, 1100, 640);
+        // ---- Scene & Stage ----
+        Scene scene = new Scene(borderPane, 1150, 700); // Fenêtre plus haute pour tout afficher
+        // Charger le fichier CSS
         try {
-            String css = getClass().getResource("ticket-persistence.css").toExternalForm();
-            scene.getStylesheets().add(css);
+            URL cssUrl = getClass().getResource("ticket-persistence.css");
+            if (cssUrl != null) {
+                scene.getStylesheets().add(cssUrl.toExternalForm());
+            } else {
+                System.err.println("CSS introuvable : ticket-persistence.css");
+            }
         } catch (Exception e) {
-            System.err.println("CSS introuvable : " + e.getMessage());
+            System.err.println("Erreur lors du chargement du CSS : " + e.getMessage());
         }
 
         stage.setTitle("Gestionnaire de Tickets – TP03");

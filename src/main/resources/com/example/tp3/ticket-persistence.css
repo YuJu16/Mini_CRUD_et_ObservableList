@@ -1,76 +1,170 @@
-/* ticket-persistence.css */
+/* ticket-persistence.css - Thème "Rose Girly Flat & Modern" */
 
 .root {
-    -fx-font-family: "Segoe UI", "Arial", sans-serif;
-    -fx-background-color: linear-gradient(to bottom, #f9fbfd, #eef3f9);
+    -fx-font-family: "Segoe UI", "Nunito", sans-serif;
+    -fx-background-color: #fdf2f8; /* Pink 50 - Rose nuage très clair */
+    -fx-font-size: 13px;
 }
 
+/* Titre principal */
 .page-title {
-    -fx-font-size: 22px;
+    -fx-font-size: 26px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1d3557;
+    -fx-text-fill: #ec4899; /* Pink 500 - Rose vif moderne */
     -fx-padding: 0 0 10 0;
 }
 
+/* Labels classiques */
 .label {
-    -fx-text-fill: #243447;
+    -fx-text-fill: #831843; /* Pink 900 - Rose foncé */
+    -fx-font-weight: 600;
 }
 
+/* Checkbox texte */
+.check-box {
+    -fx-text-fill: #831843;
+}
+
+/*--------------------------------------------------
+   CHAMPS DE SAISIE (TextField, ComboBox, TextArea)
+--------------------------------------------------*/
 .text-field,
 .combo-box,
 .date-picker,
-.text-area {
+.text-area,
+.text-area .content {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #831843;
+    -fx-prompt-text-fill: #fbcfe8; /* Pink 200 */
     -fx-background-radius: 8px;
     -fx-border-radius: 8px;
-    -fx-border-color: #c8d6e5;
+    -fx-border-color: #fbcfe8; /* Pink 200 */
+    -fx-border-width: 1px;
     -fx-padding: 8px;
 }
 
+.text-area .viewport {
+    -fx-background-color: transparent;
+}
+
+.text-field:focused,
+.combo-box:focused,
+.date-picker:focused,
+.text-area:focused {
+    -fx-border-color: #f472b6; /* Pink 400 */
+    -fx-effect: dropshadow(three-pass-box, rgba(244, 114, 182, 0.4), 6, 0, 0, 0);
+    -fx-background-color: #ffffff;
+}
+
+/*--------------------------------------------------
+   BOUTONS (Flat Rose Vif, pas de gros dégradé vieillot)
+--------------------------------------------------*/
 .button {
-    -fx-background-color: #2563eb;
+    -fx-background-color: #f472b6; /* Pink 400 - Très joli rose */
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-background-radius: 8px;
-    -fx-padding: 6 8 6 8;
+    -fx-background-radius: 8px; 
+    -fx-border-radius: 8px;
+    -fx-border-color: transparent;
+    -fx-padding: 8 16 8 16;
     -fx-cursor: hand;
-    -fx-font-size: 11px;
+    -fx-font-size: 12px;
 }
 
 .button:hover {
-    -fx-background-color: #1d4ed8;
+    -fx-background-color: #ec4899; /* Pink 500 (Assombrit légèrement) */
+    -fx-effect: dropshadow(two-pass-box, rgba(236, 72, 153, 0.3), 8, 0, 0, 2);
 }
 
+.button:pressed {
+    -fx-background-color: #db2777; /* Pink 600 */
+    -fx-translate-y: 1px;
+}
+
+/* Panneau de base du Status */
 .status-label {
-    -fx-background-color: #e8f1fb;
-    -fx-text-fill: #1d3557;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #ec4899; /* Pink 500 */
+    -fx-font-weight: bold;
     -fx-padding: 10px;
     -fx-background-radius: 8px;
-    -fx-border-color: #bfd3ea;
+    -fx-border-color: #fbcfe8; /* Pink 200 */
     -fx-border-radius: 8px;
+    -fx-border-width: 1px;
 }
 
+/*--------------------------------------------------
+   TABLE VIEW (Minimaliste et aérée)
+--------------------------------------------------*/
 .table-view {
-    -fx-background-radius: 10px;
-    -fx-border-radius: 10px;
-    -fx-border-color: #d8e2ef;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #fbcfe8; /* Pink 200 */
+    -fx-border-width: 1px;
 }
 
+/* En-tête du tableau */
 .table-view .column-header-background {
-    -fx-background-color: #dbeafe;
+    -fx-background-color: #fdf2f8; /* Pink 50 */
+    -fx-background-radius: 7px 7px 0 0;
 }
 
 .table-view .column-header,
 .table-view .filler {
-    -fx-size: 36px;
-    -fx-border-width: 0 0 1 0;
-    -fx-border-color: #bfd3ea;
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #fbcfe8; /* Pink 200 */
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #db2777; /* Pink 600 */
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 10;
+}
+
+/* Lignes du tableau */
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #fdf2f8; 
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #fdf2f8; /* Alternance ultra douce */
+}
+
+.table-cell {
+    -fx-text-fill: #831843;
+    -fx-padding: 8px 10px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #fce7f3; /* Pink 100 */
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #bfdbfe;
-    -fx-text-fill: #0f172a;
+    -fx-background-color: #fbcfe8; /* Pink 200 */
+    -fx-border-color: #ec4899; /* Pink 500 pour marquer le bord */
+    -fx-border-width: 0 0 0 3px; 
 }
 
-.check-box {
-    -fx-text-fill: #243447;
+.table-row-cell:selected .table-cell {
+    -fx-text-fill: #db2777; /* Pink 600 */
+    -fx-font-weight: bold;
+}
+
+/* Scrollbar très mignonne */
+.scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+.scroll-bar:horizontal .thumb, .scroll-bar:vertical .thumb {
+    -fx-background-color: #fbcfe8; /* Pink 200 */
+    -fx-background-radius: 8px;
+}
+.scroll-bar:horizontal .thumb:hover, .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #f472b6; /* Pink 400 */
 }
